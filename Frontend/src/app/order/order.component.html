@@ -1,0 +1,73 @@
+<!-- <ul *ngFor="let order of marketOrders">
+    <li>
+      {{order.uId}}
+    </li>
+    <li>
+      {{order.name}}
+    </li>
+    <li>
+      {{order.address}}
+    </li>
+    <li>
+      {{order.pin}}
+    </li>
+    <li>
+      {{order.paymentmode}}
+    </li>
+    <li>
+      {{order.state}}
+    </li>
+    <li>
+      {{order.status}}
+    </li>
+    <ul *ngFor="let product of order.cart">
+      <li>
+        {{product.price}}
+      </li>
+      <li>
+        {{product.type}}
+      </li>
+      <img src="{{product.image}}" class="w-50 h-50">
+    </ul>
+    <button (click)="cancelMarketOrder(order._id)" *ngIf="order.status!='Cancelled'">
+      Cancel Order
+    </button>
+  </ul> -->
+  <!--  -->
+  <div class="no-order-container" *ngIf="!marketOrders[0]">
+    <img class="no-order-image" src="https://mir-s3-cdn-cf.behance.net/projects/404/8412d0104101523.Y3JvcCwxMDI0LDgwMCwwLDcw.jpg" alt="noOrderImage">
+    <h2 class="no-order-heading">No order found!</h2>
+    <p class="no-order-paragraph">Looks like you haven't made your order yet.</p>
+</div>
+  <div class="order-container" *ngIf="marketOrders.length>0">
+    <h2>Your Orders</h2>
+    <div class="order-header">
+          </div>
+    <div class="order-list"> 
+      <div *ngFor="let order of marketOrders" class="order-card">  
+        <div class="order-details">
+          <p class="order-id">Name: {{ order.uId }}</p>
+          <p class="order-status">Order Status: {{ order.status }}</p>
+        </div>
+        <div class="shipping-address">
+          <p class="address-label">Shipping Address: {{ order.address }}, {{ order.pin }}, {{ order.state }}</p>
+        </div>
+        <div class="product-list">
+          <div *ngFor="let product of order.cart" class="product-item">
+            <div class="product-info">
+              <img src="{{ product.image }}" alt="{{ product.type }}" style="max-width: 200px;max-height: 200px;" class="product-image">
+              <div class="product-details">
+                <p class="product-type">Type: {{ product.type }}</p>
+                <p class="product-price">Price: ₹{{ product.price }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button (click)="cancelMarketOrder(order._id)" class="cancel-button" *ngIf="order.status !== 'Cancelled'">
+          Cancel Order
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  

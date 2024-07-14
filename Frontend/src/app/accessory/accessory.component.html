@@ -1,0 +1,16 @@
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let accessory of accessories">
+            <div class="card h-100 gap-2">
+              <img src="{{accessory.image}}" class="card-img-top" alt="...">
+              <div class="card text-center">
+              <div class="card-body">
+              <p class="card-text">{{ accessory.pins }}</p>
+              <p class="card-text">Price: ₹{{ accessory.price }}</p><br>
+                <button class="btn btn-danger" (click)="onSubmit(accessory._id)">View Details</button>&nbsp;&nbsp;
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>

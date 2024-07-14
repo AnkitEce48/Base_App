@@ -1,0 +1,36 @@
+.carousel-inner{
+    img{
+    width: 650px;
+    max-height: 550px;
+    padding-top: 30px;
+    }
+  }
+ .container { 
+    margin-top: 35px;
+    width: 100%; 
+    padding: 10px;
+} 
+
+@media (max-width: 576px) {
+    .container{
+        margin-top: 0px;
+    }
+}
+
+img { 
+    height: 550px; 
+    width: 490px;
+} 
+#carouselExampleCaptions{
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+#tag{
+    padding-top: 20px;
+}
+h4{
+    color: brown;
+    font-weight: bold;
+}
+

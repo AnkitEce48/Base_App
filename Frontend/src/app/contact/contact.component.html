@@ -1,0 +1,25 @@
+<div class="root">
+<div class="contact-page">
+    <div class="form">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <div>
+                <h4>Contact Us</h4>
+                <input id="uId" type="text" placeholder="Name" formControlName="uId" style="width: 270px;" />
+                <div *ngIf="contactForm.controls.uId.invalid && (contactForm.controls.uId.dirty || contactForm.controls.uId.touched)">
+                    <div *ngIf="contactForm.controls.uId.errors?.['required']" style="color: rgb(225, 9, 9);">Name is required.</div>
+                </div>
+                <input id="email" type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" formControlName="uEmail" style="width: 270px;" />
+                <div *ngIf="contactForm.controls.uEmail.invalid && (contactForm.controls.uEmail.dirty || contactForm.controls.uEmail.touched)">
+                    <div *ngIf="contactForm.controls.uEmail.errors?.['required']" style="color: rgb(225, 9, 9);">Email is required.</div>
+                    <div *ngIf="contactForm.controls.uEmail.errors?.['pattern']" style="color: rgb(225, 9, 9);">Incorrect Mail id </div>
+                </div>
+                <textarea id="queries" placeholder="Your Queries" formControlName="uQueries" style="width: 270px;"></textarea>
+                <div *ngIf="contactForm.controls.uQueries.invalid && (contactForm.controls.uQueries.dirty || contactForm.controls.uQueries.touched)">
+                    <div *ngIf="contactForm.controls.uQueries.errors?.['required']" style="color: rgb(225, 9, 9);">Query is required.</div>
+                </div>
+                <button type="submit" value="submit" (click)="feedback()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

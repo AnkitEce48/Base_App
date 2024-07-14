@@ -1,0 +1,17 @@
+.card {
+   
+    padding: 10px;
+    margin-bottom: 0px;
+    transition: transform 0.3s ease;
+    scale: 1;
+  }
+ 
+.card:hover {
+    transform: scale(1.03);
+    background-color: rgb(255, 252, 240);
+  }
+  
+.container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+} 

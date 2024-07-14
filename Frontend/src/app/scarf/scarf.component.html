@@ -1,0 +1,17 @@
+      <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let scarf of scarves">
+          <div class="card h-100 gap-2">
+            <img src="{{scarf.image}}" class="card-img-top" alt="...">
+            <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text">{{ scarf.fabric }}</p>
+              <p class="card-text">Price: ₹{{ scarf.price }}</p><br>
+              <button class="btn btn-danger" (click)="onSubmit(scarf._id)">View Details</button>&nbsp;&nbsp;
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>

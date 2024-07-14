@@ -1,0 +1,90 @@
+:root {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.card {
+    padding: 10px;
+    margin-bottom: 0;
+    width: 100%;
+}
+.container {
+    display: table;
+    flex-wrap: wrap;
+    padding-top: 25px;
+    padding-bottom: 45px;
+    width: 90%; 
+    margin: 0 auto; 
+}
+
+.image {
+    width: 50%;
+    text-align: center;
+}
+
+.text {
+    width: 50%;
+}
+
+@media screen and (max-width: 1500px) {
+    .container {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .image, .text {
+        width: 80%;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+:root {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+form {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #FFC107;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #FFA000;
+}
+
+@media screen and (max-width: 480px) {
+    input[type="text"],
+    input[type="password"],
+    select {
+        font-size: 14px;
+    }
+}

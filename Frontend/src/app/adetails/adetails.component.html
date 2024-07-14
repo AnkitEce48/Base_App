@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="card mt-3">
+      <div class="card-body" *ngIf="proceedWith==false">
+        <div class="image">
+    <img style="max-height: 300;max-width: 300px;" src="{{ accessory.image }}" alt="">
+</div>
+<div class="text">
+    <p class="card-text">Name: {{ accessory.pins }}</p>
+    <p class="card-text">Price: ₹{{ accessory.price }}</p>
+    <p class="card-text">Number: {{ accessory.number }}</p>
+    <p class="card-text">Type: {{ accessory.type }}</p>
+    <p class="card-text">Material: {{ accessory.material }}</p>
+    <button class="btn btn-success" *ngIf="proceedWith==false" (click)="placeOrder()"> Add to cart
+    </button>
+</div>
+  </div>
+  </div>
+  </div>

@@ -1,0 +1,98 @@
+
+  <div class="cartImage" *ngIf="!cart[0]">
+      <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-7359557-6024626.png" style="max-width: 500px;max-height: 500px;" alt="emptyCart">
+              </div>
+              <div class="center" *ngIf="!cart[0]">
+              <h2>Oops! No items in cart</h2>
+                <button class="btn btn-outline-primary" style="margin-left: 20px;" (click)="goToHome()">Go shopping</button>
+              </div>
+                <div class="container mt-3">
+                  <div class="row">
+                    <div class="col-md-4" *ngFor="let product of cart">
+                          <div class="card mb-3">
+                              <div class="row">
+                                  <div class="col-4">
+                                      <img src="{{product.image}}" class="card-img-top" style="max-width: 200px;max-height: 200px;" alt="Product Image">
+                                  </div>
+                                  <div class="col-8">
+                                      <div class="card-body">
+                                          <p class="card-title">Product: {{product.type}}</p>
+                                          <p class="card-text">Price: ₹{{product.price}}</p>
+                                          <button class="btn btn-danger" (click)="removeCart(product._id)">Remove</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             <div class="d-flex justify-content-center mb-3">
+    <button class="btn btn-primary btn-lg" (click)="buyNow()" *ngIf="cart[0] && !proceedWith">Checkout</button>
+</div>
+
+                
+                <div *ngIf="proceedWith==true" class="container-fluid mb-3" style="margin-left: auto;width: 50%;">
+                    <div class="page-header">
+                      <h1>Shipping Details</h1>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="list-group">
+                          <div class="list-group-item">
+                            <div class="list-group-item-heading">          
+                                <div class="row">
+                                  <div class="col-xs-9">                      
+                                    <form role="form" [formGroup]="orderForm">
+                                      <div class="form-group">
+                                        <label for="inputname" >Name*</label>
+                                        <input type="text" class="form-control form-control-large" id="inputname" formControlName="name" placeholder="Enter name">
+                
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="inputAddress1">Street address*</label>
+                                        <input type="text" class="form-control form-control-large" id="inputAddress1" formControlName="address" placeholder="Enter address">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="phoneNumber">Mobile Number*</label>
+                                        <input type="text" class="form-control form-control-large" id="phoneNumber" formControlName="phoneNumber" placeholder="Enter phone number">
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-xs-3">
+                                          <div class="form-group">
+                                            <label for="inputZip">PIN Code*</label>
+                                            <input type="text" class="form-control form-control-large" id="inputZip" formControlName="pin" placeholder="Enter pincode">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="inputState" class="control-label">State*</label>
+                                        <select class="form-control form-control-large" formControlName="state">
+                                            <option value="" disabled selected hidden>Select place</option>
+                                          <option>Chennai</option>
+                                          <option>Puducherry</option>
+                                          <option>Mumbai</option>
+                                          <option>Bangalore</option>
+                                          <option>Kolkata</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group">
+                                      <label for="inputState" class="control-label">Payment Methods*</label>
+                                          <select class="form-control form-control-large" formControlName="paymentmode">
+                                            <option value="" disabled selected hidden>Select payment methods</option>
+                                            <option>Cash On Delivery</option>
+                                            <option disabled>UPI</option>
+                                            <option disabled>Credit/Debit</option>
+                                            <option disabled>Net Banking</option>
+                                          </select>
+                                        </div>
+                                    </form>
+                                    <b>Total Amount*:</b> ₹{{addPrice}}
+                                    <div class="text-center">
+                                    <button class="btn btn-outline-success btn-lg" (click)="placeOrder()">Place Order</button>
+                                </div>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>  

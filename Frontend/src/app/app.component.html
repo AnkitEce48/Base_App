@@ -1,0 +1,175 @@
+  <div>
+      <nav id="nav" class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <img src="/assets/app_logo.jpg" class="*image img-fluid" alt="app_logo" width="30" class="nav-brand d-inline-block img-fluid rounded">
+           THE HIJAB HUB
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink = "/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Products
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="/scarf">Scarves</a></li>
+                  <li><a class="dropdown-item" routerLink="/accessory">Accessories</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" routerLink = "/aboutus">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" routerLink = "/contact">Contact us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="/assets/login_logo.png" class="*image img-fluid" alt="app_logo" width="30" class="d-inline-block img-fluid rounded">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li *ngIf="!service.isLoggedIn()" class="nav-item">
+                    <a class="dropdown-item" routerLink="/login">Login</a>
+                  </li>
+                  <li *ngIf="!service.isLoggedIn()" class="nav-item">
+                    <a class="dropdown-item" routerLink="/register">Register</a>
+                  </li>
+                  <li *ngIf="service.isLoggedIn()" class="nav-item">
+                    <a class="dropdown-item" routerLink="/cart">Cart</a>
+                  </li>
+                  <li *ngIf="service.isLoggedIn()" class="nav-item">
+                    <a class="dropdown-item" routerLink="/order">Orders</a>
+                  </li>
+                  <li *ngIf="service.isLoggedIn()" class="nav-item">
+                    <a class="dropdown-item" routerLink="/logout">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div> 
+<router-outlet></router-outlet>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #202124"
+          >
+  
+    <div class="container p-4 pb-0">
+      <section class="">
+        <div class="row">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              The Hijab Hub
+            </h6>
+            <p >
+              “Discover the latest hijab styles and trends.”<br>
+              “Embrace modesty, empower confidence.”<br>
+              “Wear your faith with pride.”
+            </p>
+          </div>
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a class="text-white" routerLink="/scarf">Scarves</a>
+            </p>
+            <p>
+              <a class="text-white" routerLink="/accessory">Accessories</a>
+            </p>
+          </div>
+          
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> Chennai, Siruseri, TN</p>
+            <p><i class="fas fa-envelope mr-3"></i> thehijabhub&commat;gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i>9876543210</p>
+          </div>
+        
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+          
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #3b5998"
+               href="#!"
+               role="button"
+               ><i class="fab fa-facebook-f"></i
+              ></a>
+
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #55acee"
+               href="#!"
+               role="button"
+               ><i class="fab fa-twitter"></i
+              ></a>
+
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #dd4b39"
+               href="#!"
+               role="button"
+               ><i class="fab fa-google"></i
+              ></a>
+
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #ac2bac"
+               href="#!"
+               role="button"
+               ><i class="fab fa-instagram"></i
+              ></a>
+
+          
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #0082ca"
+               href="#!"
+               role="button"
+               ><i class="fab fa-linkedin-in"></i
+              ></a>
+            
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #333333"
+               href="#!"
+               role="button"
+               ><i class="fab fa-github"></i
+              ></a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </div>
+   
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2024 Copyright:
+      All Rights Reserved.
+        
+    </div>
+    
+  </footer>
+  

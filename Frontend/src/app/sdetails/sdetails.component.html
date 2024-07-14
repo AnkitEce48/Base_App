@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card mt-2 mt-3">
+    <div class="card-body" *ngIf="proceedWith==false">
+<div class="image">
+  <img style="max-height: 300;max-width: 300px;" src="{{ scarf.image }}" alt="">
+</div>
+<div class="text">
+  <p class="card-text">Name: {{ scarf.fabric }}</p>
+  <p class="card-text">Price: ₹{{ scarf.price }}</p>
+  <p class="card-text">Type: {{ scarf.type }}</p>
+  <p class="card-text">Color: {{ scarf.color }}</p>
+  <p class="card-text">Dimension: {{ scarf.dimension }}</p>
+  <button class="btn btn-success" *ngIf="proceedWith==false" (click)="placeOrder()"> Add to cart
+  </button>
+</div>
+</div>
+</div>
+</div>

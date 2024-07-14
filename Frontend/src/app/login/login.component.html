@@ -1,0 +1,25 @@
+<div class="login-page">
+    <div class="form">
+      <form [formGroup] ="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <div>
+            <h4>Login</h4>
+            <input id="uId" type="text" placeholder="User Id" formControlName ="uId"/>
+            <div  *ngIf="loginForm.controls.uId.invalid &&
+            (loginForm.controls.uId.dirty || loginForm.controls.uId.touched)">  
+            <div *ngIf="loginForm.controls.uId.errors?.['required']" style="color: rgb(225, 9, 9);">User Id is required.</div>
+            </div>
+            <input id="pass" type="password" placeholder="Password" minlength="8" maxlength="15" formControlName = "uPass"/>
+            <div  *ngIf="loginForm.controls.uPass.invalid && 
+            (loginForm.controls.uPass.dirty || loginForm.controls.uPass.touched)">  
+            <div *ngIf="loginForm.controls.uPass.errors?.['required']" style="color: rgb(225, 9, 9);">Password is required.</div>
+            <div *ngIf="loginForm.controls.uPass.errors?.['minlength']" style="color: rgb(225, 9, 9);">Minimum Length is 8</div>
+          <div *ngIf="loginForm.controls.uPass.errors?.['maxlength']" style="color: rgb(225, 9, 9);">Maximum Length is 14</div>
+          </div>
+        <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
+        <p class="message">Don't remember password? <a routerLink="/register">Forgot password</a></p>
+        {{errMsg}}
+        <button type="submit" value="Login">Submit</button>
+        </div>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="signin-page">
+    <div class="form">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="signin-form">
+        <div>
+          <h4>Register</h4>
+          <input id="uId" type="text" placeholder="User ID" formControlName="uId" />
+          <div *ngIf="registerForm.controls.uId.invalid && (registerForm.controls.uId.dirty || registerForm.controls.uId.touched)">
+            <div *ngIf="registerForm.controls.uId.errors?.['required']" style="color: rgb(225, 9, 9);">User ID is required.</div>
+          </div>
+          <input id="pass" type="password" placeholder="Password" minlength="8" maxlength="15" formControlName="uPass" />
+          <div *ngIf="registerForm.controls.uPass.invalid && (registerForm.controls.uPass.dirty || registerForm.controls.uPass.touched)">
+            <div *ngIf="registerForm.controls.uPass.errors?.['required']" style="color: rgb(225, 9, 9);">Password is required.</div>
+
+            <div *ngIf="registerForm.controls.uPass.errors?.['minlength']" style="color: rgb(225, 9, 9);">Minimum Length is 8</div>
+          <div *ngIf="registerForm.controls.uPass.errors?.['maxlength']" style="color: rgb(225, 9, 9);">Maximum Length is 14</div>
+          </div>
+          <input id="email" type="email" placeholder="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" formControlName="uEmail" />
+          <div *ngIf="registerForm.controls.uEmail.invalid && (registerForm.controls.uEmail.dirty || registerForm.controls.uEmail.touched)">
+            <div *ngIf="registerForm.controls.uEmail.errors?.['required']" style="color: rgb(225, 9, 9);">Email is required.</div>
+            <div *ngIf="registerForm.controls.uEmail.errors?.['pattern']" style="color: rgb(225, 9, 9);">Incorrect Mail id </div>
+          </div>
+          <button type="submit" value="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
